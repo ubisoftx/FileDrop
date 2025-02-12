@@ -1,6 +1,6 @@
 {
-  "name": "pairdrop",
-  "version": "1.10.10",
+  "name": "filedropp",
+  "version": "1.0.0",
   "type": "module",
   "description": "",
   "main": "server/index.js",

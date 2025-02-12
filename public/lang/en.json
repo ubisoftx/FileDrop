@@ -17,7 +17,7 @@
     },
     "instructions": {
         "no-peers_data-drop-bg": "Release to select recipient",
-        "no-peers-title": "Open PairDrop on other devices to send files",
+        "no-peers-title": "Open FileDropp on other devices to send files",
         "no-peers-subtitle": "Pair devices or enter a public room to be discoverable on other networks",
         "x-instructions_desktop": "Click to send files or right click to send a message",
         "x-instructions_mobile": "Tap to send files or long tap to send a message",
@@ -25,13 +25,13 @@
         "x-instructions_data-drop-bg": "Release to select recipient",
         "x-instructions-share-mode_desktop": "Click to send {{descriptor}}",
         "x-instructions-share-mode_mobile": "Tap to send {{descriptor}}",
-        "activate-share-mode-base": "Open PairDrop on other devices to send",
+        "activate-share-mode-base": "Open FileDropp on other devices to send",
         "activate-share-mode-and-other-file": "and 1 other file",
         "activate-share-mode-and-other-files-plural": "and {{count}} other files",
         "activate-share-mode-shared-text": "shared text",
         "activate-share-mode-shared-file": "shared file",
         "activate-share-mode-shared-files-plural": "{{count}} shared files",
-        "webrtc-requirement": "To use this PairDrop instance, WebRTC must be enabled!"
+        "webrtc-requirement": "To use this FileDropp instance, WebRTC must be enabled!"
     },
     "footer": {
         "known-as": "You are known as:",

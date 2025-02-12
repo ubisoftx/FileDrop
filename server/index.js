@@ -1,8 +1,8 @@
 import {spawn} from "child_process";
 import fs from "fs";
 
-import PairDropServer from "./server.js";
-import PairDropWsServer from "./ws-server.js";
+import FileDropServer from "./server.js";
+import FileDropWsServer from "./ws-server.js";
 
 // Handle SIGINT
 process.on('SIGINT', () => {
@@ -174,13 +174,13 @@ if (conf.autoStart) {
 }
 
 // Start server to serve client files
-const pairDropServer = new PairDropServer(conf);
+const fileDropServer = new FileDropServer(conf);
 
 if (!conf.signalingServer) {
     // Start websocket server if SIGNALING_SERVER is not set
-    new PairDropWsServer(pairDropServer.server, conf);
+    new FileDropWsServer(fileDropServer.server, conf);
 } else {
     console.log("This instance does not include a signaling server. Clients on this instance connect to the following signaling server:", conf.signalingServer);
 }
 
-console.log('\nPairDrop is running on port', conf.port);
+console.log('\nFileDrop is running on port', conf.port);

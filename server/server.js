@@ -4,7 +4,7 @@ import {fileURLToPath} from "url";
 import path, {dirname} from "path";
 import http from "http";
 
-export default class PairDropServer {
+export default class FileDropServer {
 
     constructor(conf) {
         const app = express();
@@ -33,7 +33,19 @@ export default class PairDropServer {
         const __dirname = dirname(__filename);
 
         const publicPathAbs = path.join(__dirname, '../public');
-        app.use(express.static(publicPathAbs));
+        const staticOptions = {
+            // Disable etag and lastModified headers
+            etag: false,
+            lastModified: false,
+            // Set Cache-Control header for every static file to prevent caching
+            setHeaders: (res, path, stat) => {
+                res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+            },
+            // Alternatively, maxAge can be set to 0
+            maxAge: 0
+        };
+        
+        app.use(express.static(publicPathAbs, staticOptions));
 
         if (conf.debugMode && conf.rateLimit) {
             console.debug("\n");
@@ -54,14 +66,19 @@ export default class PairDropServer {
             });
         });
 
+        app.get(['/', '/home', '/root'], (req, res) => {
+            res.sendFile(path.join(publicPathAbs, 'landing-page.html'));
+        });
+          
+
+        app.get('/sharing', (req, res) => {  
+            res.sendFile(path.join(publicPathAbs, 'sharing.html'));
+        });
+
         app.use((req, res) => {
             res.redirect(301, '/');
         });
 
-        app.get('/', (req, res) => {
-            res.sendFile('index.html');
-            console.log(`Serving client files from:\n${publicPathAbs}`)
-        });
 
         const hostname = conf.localhostOnly ? '127.0.0.1' : null;
         const server = http.createServer(app);
