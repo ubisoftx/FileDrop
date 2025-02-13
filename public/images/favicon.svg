@@ -1,5 +1,41 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="32" height="32" rx="8" fill="#3498db"/>
-    <path d="M16 8L22 14H18V20H14V14H10L16 8Z" fill="white"/>
-    <path d="M10 22V24H22V22H10Z" fill="white"/>
+<svg 
+  width="32" 
+  height="32" 
+  viewBox="0 0 32 32" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Rounded square background -->
+  <rect
+    width="32"
+    height="32"
+    rx="8"
+    fill="#3498db"
+  />
+
+  <!-- Folder shape in white -->
+  <path
+    d="M9 12 
+       H13 L14 11 
+       H18 L19 12 
+       H23 V22 
+       C23 23.1 22.1 24 21 24 
+       H11 
+       C9.9 24 9 23.1 9 22 
+       V12 Z"
+    fill="white"
+  />
+  
+  <!-- Downward arrow in a darker blue (#2980b9) for contrast -->
+  <path
+    d="M16 14 
+       L13 17 
+       H15 
+       V20 
+       H17 
+       V17 
+       H19 
+       L16 14 Z"
+    fill="#2980b9"
+  />
 </svg>
